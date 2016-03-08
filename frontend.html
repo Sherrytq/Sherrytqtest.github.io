@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Mypage</title>
+	<title>前端</title>
+	<base target="iframe"/>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css" media="screen" >
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body class="home">
+<body>
     <!-- 导航条 -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 	   <div class="container">
@@ -19,26 +20,56 @@
 			  </div>
 			  <div class="navbar-collapse collapse">
 			   <ul class="nav navbar-nav pull-right">
-				<li class="active"><a href="#">主页</a></li>
-				<li><a href="frontend.html">前端</a></li>
-				<li><a href="movie.html">电影</a></li>
-			  	<li><a href="tirp.html">旅游</a></li>
-				<li><a href="music.html">音乐</a></li>
-				<li><a href="about.html">关于</a></li>
+				<li ><a href="index.html" target="_self">主页</a></li>
+				<li class="active"><a href="frontend.html" target="_self">前端</a></li>
+				<li><a href="movie.html" target="_self">电影</a></li>
+				<li><a href="tirp.html" target="_self">旅游</a></li>
+				<li><a href="music.html" target="_self">音乐</a></li>
+				<li><a href="about.html" target="_self">关于</a></li>				
+			   </ul>
 		     </div><!--/.nav-collapse -->
 		  </div>
 	    </div> 
-   <div id="content">
-   	<header id="head">
-		<div class="container">
-			<div class="row">
-				<h1 class="lead">Welcome to My world ^_^</h1>
-				<p>This is my little world~~welcome~~~</p>
-			</div>
-		</div>
-	</header>
-   </div>
+
 	<!-- Header -->
+	<!-- <header id="head" class="secondary"></header> -->
+ <div id="content">
+ 	<div class="container" >
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-sm-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">前端</h1>
+				</header>
+				<div class="show">
+					<iframe name="iframe" src="frontend/blog.html" seamless border="0" scrolling="no" frameborder="no" ></iframe>
+				</div>
+	
+			</article>
+			<!-- /Article -->
+			
+			<!-- Sidebar -->
+			<aside class="col-sm-4 sidebar sidebar-right">
+
+				<div class="widget" >
+					<h4>前端</h4>
+					<ul class="list-unstyled list-spaces">
+						<li ><a href="frontend/blog.html">大牛们的博客</a><br></li>
+						<li ><a href="frontend/interview.html">前人前端面试题</a><br></li>
+						<li ><a href="frontend/tools.html">前端工具</a><br></li>
+						<li ><a href="http://codepen.io/Sherrytq/" target="_blank">About me </a><br></li>
+					</ul>
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
+
+		</div>
+	</div>	<!-- /container -->
+
+ </div>
+	
 	
 
 	<footer id="footer" class="top-space">
@@ -77,6 +108,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/headroom.min.js"></script>
 	<script src="js/jQuery.headroom.min.js"></script>
-	<script src="js/template.js"></script>
+    <script src="js/template.js"></script>
 </body>
 </html>
