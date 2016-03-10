@@ -43,7 +43,14 @@
 					<h1 class="page-title">前端</h1>
 				</header>
 				<div class="show">
-					<iframe name="iframe" src="frontend/blog.html" seamless border="0" scrolling="no" frameborder="no" ></iframe>
+				<!-- 	<iframe name="iframe" src="frontend/blog.html" seamless border="0" scrolling="no" frameborder="no" ></iframe> -->
+				<div>
+					<h3 class="show-title">title</h3>
+	                <ul class="show-list">
+		               <li><a href="item-url" target="_blank">item-title</a></li>
+		            </ul>
+				</div>
+                
 				</div>
 	
 			</article>
@@ -55,10 +62,10 @@
 				<div class="widget" >
 					<h4>前端</h4>
 					<ul class="list-unstyled list-spaces">
-						<li ><a href="frontend/blog.html">大牛们的博客</a><br></li>
-						<li ><a href="frontend/interview.html">前人前端面试题</a><br></li>
-						<li ><a href="frontend/tools.html">前端工具</a><br></li>
-						<li ><a href="http://codepen.io/Sherrytq/" target="_blank">About me </a><br></li>
+						<li ><a class="nav-link" href="javascript:void(0);" data-url="frontend/blog.json">大牛们的博客</a><br></li>
+						<li ><a class="nav-link"  href="javascript:void(0);" data-url="frontend/interview.json">前人前端面试题</a><br></li>
+						<li ><a class="nav-link" href="javascript:void(0);" data-url="frontend/tools.json">前端工具</a><br></li>
+						<li ><a  href="http://codepen.io/Sherrytq/" target="_blank">About me </a><br></li>
 					</ul>
 				</div>
 
@@ -109,5 +116,54 @@
 	<script src="js/headroom.min.js"></script>
 	<script src="js/jQuery.headroom.min.js"></script>
     <script src="js/template.js"></script>
+
+    <script type="text/javascript">
+    $(function(){
+    	var loadData = function(dataUrl) { 
+    			//$(".show").empty();
+	    		$.getJSON(dataUrl, function(data) {
+                     // console.log(data);
+	    			$('.show-title').text(data.title);
+					$('.show-list').empty();
+	    			for(var i in data.items) {
+	    				var item = data.items[i];
+	    				var li = $('<li><a class="link" target="_blank" href="item-url">item-title</a></li>');
+	    				li.find(".link").attr('href', item.url).text(item.title);
+	    				$('.show-list').append(li);
+	    			};
+	    			$(".show").append()
+	    		});
+    		}
+    		loadData($('.nav-link').data('url'));
+    		$('.nav-link').on('click', function (e) {
+    			e.preventDefault();
+    			loadData($(this).data('url'));
+    		});
+    //   var load=function(dataUrl){
+      
+    //  	$.getJSON(dataUrl, function(data){
+    //  			console.log(data);
+    //  		$(".show-title").text(data.title);
+    //  		$(".show-list").empty();
+    //  		for( var i in data.items){
+    //  	    var item = data.items[i]; 
+    //  		var li=$('<li><a  class="link" href="" target="_blank"></a></li>');
+    //         li.find(".link").attr("href",item.url).text(item.title);
+    //         $(".show-list").append(li); 		
+    //  	   };
+    //  });
+    //  }
+
+    //  load($(".nav-link").data("url"));//获得第一个
+    //  $(".nav-link").on("click",function(e){
+    //      e.preventDefault();
+    //      load($(this).data("url"));
+    //  });
+     });
+   
+
+
+
+    </script>
 </body>
 </html>
