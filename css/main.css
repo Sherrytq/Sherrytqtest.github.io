@@ -1,9 +1,6 @@
 
 #content{
-	position:fixed;
-	height:80%;
-	width:100%;
-	top:12%;
+margin-top: 100px;
 }
 /* Header */
 #head { 
